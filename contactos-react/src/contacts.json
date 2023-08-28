@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "name": "Claro",
+        "phoneNumber": "2250-5555",
+        "isFavorite": false
+    },
+    {
+        "id": 2,
+        "name": "Movistar",
+        "phoneNumber": "2244-0144",
+        "isFavorite": false
+    },
+    {
+        "id": 3,
+        "name": "Digicel",
+        "phoneNumber": "2504-3444",
+        "isFavorite": false
+    }
+]
