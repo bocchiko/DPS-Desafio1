@@ -4,14 +4,14 @@ import { ContactList } from "./ContactList";
 import { useState } from "react";
 export const Form = () => {
 
-    const [nombre,setNombre] = useState('');
-    const [lastname,setLastName] = useState('');
-    const [phone,setPhone] = useState('');
+    const [nombre, setNombre] = useState('');
+    const [lastname, setLastName] = useState('');
+    const [phone, setPhone] = useState('');
 
-    const[contacts,setContacts] = useState(list);
+    const [contacts, setContacts] = useState(list);
 
     const handleChangeName = (e) => {
-       setNombre(e.target.value);
+        setNombre(e.target.value);
     }
     const handleChangeLastName = (e) => {
         setLastName(e.target.value);
@@ -21,7 +21,7 @@ export const Form = () => {
     }
 
     const handleClick = e => {
-        if(nombre.trim().length === 0  || lastname.trim().length === 0 || phone.trim().length === 0){
+        if (nombre.trim().length === 0 || lastname.trim().length === 0 || phone.trim().length === 0) {
             alert('Ningun campo puede estar vacio !!');
             return;
         }
@@ -30,7 +30,8 @@ export const Form = () => {
             name: nombre,
             lastname: lastname,
             phoneNumber: phone,
-            isFavorite: false
+            isFavorite: false,
+            star: "https://cdn-icons-png.flaticon.com/128/1828/1828884.png"
         };
         const newList = contacts.concat(newItem);
         setContacts(newList);
@@ -41,33 +42,27 @@ export const Form = () => {
     };
 
     const deleteContact = (id) => {
-       const newList =  contacts.filter((item) => item.id !== id);
-       /*  setContacts((current) => current.filter((contact) => contact.id === id) ); */
-       setContacts(newList);
-    }
-
-
-    const setFavorite = (id,value) => {
-        const newList = contacts.map((item) => {
-            if (item.id === id) {
-              const updatedItem = {
-                ...item,
-                isFavorite: value,
-              };
-      
-              return updatedItem;
-            }
-      
-            return item;
-        });
-    
+        const newList = contacts.filter((item) => item.id !== id);
         setContacts(newList);
     }
-   /*  const SortedList = [...contacts].sort((a, b) =>{
-        if (a.isFavorite && !b.isFavorite) return -1;
-        if (!a.isFavorite && b.isFavorite) return 1;
-        return 0;
-    }) */
+
+
+    const setFavorite = (id, value) => {
+        const newList = contacts.map((item) => {
+            if (item.id === id) {
+                const updatedItem = {
+                    ...item,
+                    isFavorite: value,
+                };
+
+                return updatedItem;
+            }
+
+            return item;
+        });
+
+        setContacts(newList);
+    }
 
     return (
         <>
@@ -83,10 +78,10 @@ export const Form = () => {
             </form>
 
             {
-                <div className="">
-                    <ContactList contacts={contacts} onRemove={deleteContact} setFavorite={setFavorite}/>
+                <div className="contact-list">
+                    <ContactList contacts={contacts} onRemove={deleteContact} setFavorite={setFavorite} />
                 </div>
-            
+
             }
         </>
     );

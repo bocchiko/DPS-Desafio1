@@ -1,14 +1,12 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 
-const Contact = ({contact,onRemove, setFavorite}) => {
+const Contact = ({ contact, onRemove, setFavorite }) => {
 
-
-
-    const[isFavorite,setFav] = useState(contact.isFavorite);
+    const [isFavorite, setFav] = useState(contact.isFavorite);
 
     const ToggleFavorite = (e) => {
         setFav(!isFavorite);
-        setFavorite(contact.id, contact.isFavorite  === true ? false:true );
+        setFavorite(contact.id, contact.isFavorite === true ? false : true);
     };
 
     return (
@@ -17,12 +15,13 @@ const Contact = ({contact,onRemove, setFavorite}) => {
             <p>{contact.name}</p>
             <p>{contact.lastname}</p>
             <p>{contact.phoneNumber}</p>
+            <img src={contact.isFavorite ? contact.star : null} alt="" />
             <button onClick={ToggleFavorite}>
                 {contact.isFavorite ? 'Remove from Favorites' : 'Add to Favorites'}
             </button>
             <button onClick={() => onRemove(contact.id)}>Remove</button>
         </div>
-    ); 
+    );
 };
 
 export default Contact;
