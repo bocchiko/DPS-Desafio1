@@ -1,5 +1,5 @@
 import React from 'react';
-import Contact from './contact';
+import Contact from './Contact';
 export const ContactList = ({ contacts, onRemove, setFavorite }) => {
 
     const SortedList = [...contacts].sort((a, b) => {
