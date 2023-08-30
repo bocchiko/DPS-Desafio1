@@ -11,10 +11,13 @@ descargarlo e instalarlo desde [nodejs.org](https://nodejs.org/).
 1. Abre tu terminal y navega hasta la ubicación donde deseas clonar el repositorio.
 2. Ejecuta el siguiente comando para clonar el repositorio:
 ```
-git clone https://github.com/bocchiko/DPS-Desafio1
+git clone https://github.com/bocchiko/DPS-Desafio1.git
 ```
-3. Ingresa al directorio (DPS-Desafio1/contactos-react) del proyecto usando el comando:
+3. Ingresa al directorio (DPS-Desafio1\contactos-react) del proyecto usando el comando:
 ```
+cd DPS-Desafio1\contactos-react
+o
+cd DPS-Desafio1
 cd contactos-react
 ```
 ## Instalar dependencias
