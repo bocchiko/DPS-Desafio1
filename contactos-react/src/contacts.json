@@ -4,23 +4,20 @@
         "name": "Luis",
         "lastname": "Bonilla",
         "phoneNumber": "2250-5555",
-        "isFavorite": false,
-        "star": "https://cdn-icons-png.flaticon.com/128/1828/1828884.png"
+        "isFavorite": false
     },
     {
         "id" : 2,
         "name": "Josias",
         "lastname": "Alvarenga",
         "phoneNumber": "2244-0144",
-        "isFavorite": false,
-        "star": "https://cdn-icons-png.flaticon.com/128/1828/1828884.png"
+        "isFavorite": false
     },
     {
         "id" : 3,
         "name": "Elizabeth",
         "lastname": "Romero",
         "phoneNumber": "2504-3444",
-        "isFavorite": false,
-        "star": "https://cdn-icons-png.flaticon.com/128/1828/1828884.png"
+        "isFavorite": false
     }
 ]
