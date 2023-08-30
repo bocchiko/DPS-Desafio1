@@ -2,6 +2,8 @@ import React from "react";
 import list from '../contacts.json';
 import { ContactList } from "./ContactList";
 import { useState } from "react";
+import Swal from 'sweetalert2'
+
 export const Form = () => {
 
     const [nombre, setNombre] = useState('');
@@ -22,7 +24,11 @@ export const Form = () => {
 
     const handleClick = e => {
         if (nombre.trim().length === 0 || lastname.trim().length === 0 || phone.trim().length === 0) {
-            alert('Ningun campo puede estar vacio !!');
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'The fields cannot be empty !!!',
+            });
             return;
         }
         const newItem = {
@@ -31,7 +37,6 @@ export const Form = () => {
             lastname: lastname,
             phoneNumber: phone,
             isFavorite: false,
-            star: "https://cdn-icons-png.flaticon.com/128/1828/1828884.png"
         };
         const newList = contacts.concat(newItem);
         setContacts(newList);
@@ -66,23 +71,38 @@ export const Form = () => {
 
     return (
         <>
-            <form onSubmit={e => e.preventDefault()}>
-                <label>Agregar Nombre</label><br />
-                <input type="text" name="name" value={nombre} onChange={handleChangeName} />
-                <label>Agregar Apellido</label><br />
-                <input type="text" name="lastname" value={lastname} onChange={handleChangeLastName} />
-                <label>Agregar Numero Telefonico</label><br />
-                <input type="text" name="phone" value={phone} onChange={handleChangePhone} />
-                <button onClick={handleClick}>Agregar</button>
-
-            </form>
-
-            {
-                <div className="contact-list">
-                    <ContactList contacts={contacts} onRemove={deleteContact} setFavorite={setFavorite} />
+            <div className="container">
+                <div className="row py-3">
+                    <div className="col-sm-12 offset-sm-0 col-md-6 offset-md-3 p-5" id="formulario" >
+                        <form className="" onSubmit={e => e.preventDefault()} >
+                            <h2 className="text-center">Contacts</h2>
+                            <div className="mb-3 mt-3">
+                                <label className="form-label">Add a Name:</label>
+                                <input type="text" className="form-control" id="name" name="name" value={nombre} onChange={handleChangeName}/>
+                            </div>
+                            <div className="mb-3">
+                                <label className="form-label">Add a Lastname:</label>
+                                <input type="text" className="form-control" id="lastname" name="lastname" value={lastname} onChange={handleChangeLastName}/>
+                            </div>
+                            <div className="mb-3">
+                                <label className="form-label">Add a Phone Number:</label>
+                                <input type="text" className="form-control" id="phone" name="phone" value={phone} onChange={handleChangePhone}/>
+                            </div>
+                            <div className="text-end">
+                                <button className="btn btn-md btn-success" onClick={handleClick}>Add</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div className="col-md-12 py-5">
+                        {
+                            <div className="contact-list">
+                                <ContactList contacts={contacts} onRemove={deleteContact} setFavorite={setFavorite} />
+                            </div>
+                        }
+                    </div>
                 </div>
-
-            }
+            </div>
+           
         </>
     );
 }
