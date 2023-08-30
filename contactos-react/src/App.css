@@ -1,68 +1,39 @@
+body{
+  background-color:#dee2e6;
+}
+
 /* Estilos para centrar la lista de contactos */
 .contact-list {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 20px;
   margin: 0 auto;
-  margin-top: 20px;
 }
 
-.contact {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 10px;
-  background-color: white;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  position: relative;
-}
-
-
-/* Estilos para los inputs y botón de creación de contacto */
-form {
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
-}
-
-label {
-  margin: 5px;
-}
-
-input {
-  width: 150px;
-  margin: 5px;
+/*Estilo para Contact-box*/
+#contact {
   padding: 5px;
-}
-
-button {
-  margin: 5px;
-  padding: 5px 10px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  cursor: pointer;
-}
-
-/* Estilos para las celdas de los contactos */
-.contact {
-  width: 200px;
-  border: 1px solid #ccc;
-  padding: 10px;
-  margin: 10px;
-  background-color: white;
-  display: flex;
-  flex-direction: column;
+  box-shadow: 10px 10px 50px 1px #7c7c81;
+  border-radius: 10px;
+  min-height: 20vh; 
   align-items: center;
+  align-content: center;
+  justify-content: center;
 }
 
-
-
-/* Estilos para los botones de favoritos y eliminar */
-button {
-  margin-top: 5px;
-  padding: 3px 8px;
+/*Estilo de Contact-img*/
+#contact img{
+  width: 2rem;
+  height: 2rem;
   border: none;
-  cursor: pointer;
+}
+
+/* Estilos para Formulario-box */
+#formulario {
+  padding: 5px;
+  box-shadow: 10px 10px 50px 1px #7c7c81;
+  border-radius: 10px;
+  min-height: 20vh; 
+  align-content: center;
+  justify-content: center;
 }
